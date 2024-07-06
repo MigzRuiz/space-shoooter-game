@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://bue6uhrsebs67"]
+
+[ext_resource type="Texture2D" uid="uid://b1ta3ekscqjek" path="res://assets/ship.png" id="1_t2kh8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xpoe5"]
+atlas = ExtResource("1_t2kh8")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_72w1u"]
+atlas = ExtResource("1_t2kh8")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wqtf6"]
+atlas = ExtResource("1_t2kh8")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3x3mw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xpoe5")
+}],
+"loop": true,
+"name": &"center",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_72w1u")
+}],
+"loop": true,
+"name": &"steer_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wqtf6")
+}],
+"loop": true,
+"name": &"steer_right",
+"speed": 5.0
+}]
+
+[node name="Ship" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_3x3mw")
+animation = &"center"
+autoplay = "center"
