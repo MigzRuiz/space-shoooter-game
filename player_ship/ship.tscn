@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bue6uhrsebs67"]
+[gd_scene load_steps=8 format=3 uid="uid://bue6uhrsebs67"]
 
 [ext_resource type="Texture2D" uid="uid://b1ta3ekscqjek" path="res://assets/ship.png" id="1_t2kh8"]
+[ext_resource type="Script" path="res://components/move_component.gd" id="2_rrsf4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xpoe5"]
 atlas = ExtResource("1_t2kh8")
@@ -41,9 +42,24 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="GDScript" id="GDScript_xnqmn"]
+script/source = "class_name MoveStats # Calling this MoveStats
+extends Resource
+
+@export var speed:int = 100 #Setting the speed default to 100
+"
+
 [node name="Ship" type="Node2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_3x3mw")
 animation = &"center"
 autoplay = "center"
+
+[node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("actor")]
+script = ExtResource("2_rrsf4")
+actor = NodePath("..")
+velocity = Vector2(2.08165e-12, 2.08165e-12)
+
+[node name="MoveInputComponent" type="Node" parent="."]
+script = SubResource("GDScript_xnqmn")
