@@ -1,4 +1,4 @@
-# Give the component a class name so it can be instanced as a custom node
+mm# Give the component a class name so it can be instanced as a custom node
 class_name SpawnerComponent
 extends Node2D
 

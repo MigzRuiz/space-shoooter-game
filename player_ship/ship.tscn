@@ -1,25 +1,27 @@
-[gd_scene load_steps=8 format=3 uid="uid://bue6uhrsebs67"]
+[gd_scene load_steps=9 format=3 uid="uid://yjjgk503uy5n"]
 
 [ext_resource type="Texture2D" uid="uid://b1ta3ekscqjek" path="res://assets/ship.png" id="1_t2kh8"]
 [ext_resource type="Script" path="res://components/move_component.gd" id="2_rrsf4"]
+[ext_resource type="Script" path="res://components/move_input_component.gd" id="3_snj4q"]
+[ext_resource type="Resource" uid="uid://b0s4qhdevw05m" path="res://player_ship/ship_move_stats.tres" id="4_ecgrp"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xpoe5"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_p11tw"]
 atlas = ExtResource("1_t2kh8")
 region = Rect2(16, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_72w1u"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_uvxm4"]
 atlas = ExtResource("1_t2kh8")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wqtf6"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_cc6jv"]
 atlas = ExtResource("1_t2kh8")
 region = Rect2(32, 0, 16, 16)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_3x3mw"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_l4gkr"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xpoe5")
+"texture": SubResource("AtlasTexture_p11tw")
 }],
 "loop": true,
 "name": &"center",
@@ -27,7 +29,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_72w1u")
+"texture": SubResource("AtlasTexture_uvxm4")
 }],
 "loop": true,
 "name": &"steer_left",
@@ -35,31 +37,25 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wqtf6")
+"texture": SubResource("AtlasTexture_cc6jv")
 }],
 "loop": true,
 "name": &"steer_right",
 "speed": 5.0
 }]
 
-[sub_resource type="GDScript" id="GDScript_xnqmn"]
-script/source = "class_name MoveStats # Calling this MoveStats
-extends Resource
-
-@export var speed:int = 100 #Setting the speed default to 100
-"
-
 [node name="Ship" type="Node2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_3x3mw")
+sprite_frames = SubResource("SpriteFrames_l4gkr")
 animation = &"center"
 autoplay = "center"
 
 [node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("actor")]
 script = ExtResource("2_rrsf4")
 actor = NodePath("..")
-velocity = Vector2(2.08165e-12, 2.08165e-12)
 
-[node name="MoveInputComponent" type="Node" parent="."]
-script = SubResource("GDScript_xnqmn")
+[node name="MoveInputComponent" type="Node" parent="." node_paths=PackedStringArray("move_component")]
+script = ExtResource("3_snj4q")
+move_component = NodePath("../MoveComponent")
+move_stats = ExtResource("4_ecgrp")
