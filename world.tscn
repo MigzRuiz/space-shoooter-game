@@ -6,4 +6,4 @@
 position = Vector2(60, 40)
 
 [node name="Ship" parent="." instance=ExtResource("1_oh70a")]
-position = Vector2(-16, 128)
+position = Vector2(19, 162)
