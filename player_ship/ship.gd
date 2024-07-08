@@ -1,12 +1,14 @@
 extends Node2D
 @onready var right_muzzle : Marker2D = $RightMuzzle
 @onready var left_muzzle : Marker2D = $LeftMuzzle
-@onready var spawner_component : SpawnerComponent = $SpawnerComponent
+#@onready var spawner_component : SpawnerComponent = $SpawnerComponent
+@onready var spawner_component = $SpawnerComponent
 @onready var fire_rate_timer : Timer = $FireRateTimer
 @onready var scale_component : ScaleComponent = $ScaleComponent
 @onready var animated_sprite_2d: AnimatedSprite2D = $Anchor/AnimatedSprite2D
 @onready var move_component: MoveComponent = $MoveComponent
 @onready var flame_animated_sprite = $Anchor/FlameAnimatedSprite
+
 
 
 func _ready():
