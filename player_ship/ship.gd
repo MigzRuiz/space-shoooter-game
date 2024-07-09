@@ -10,7 +10,6 @@ extends Node2D
 @onready var flame_animated_sprite = $Anchor/FlameAnimatedSprite
 
 
-
 func _ready():
 	fire_rate_timer.timeout.connect(fire_lasers)
 	
