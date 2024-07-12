@@ -8,15 +8,15 @@
 position = Vector2(60, 40)
 
 [node name="Ship" parent="." instance=ExtResource("1_oh70a")]
-position = Vector2(20, 176)
+position = Vector2(19, 162)
 
 [node name="SpaceBackground" parent="." instance=ExtResource("2_jsonh")]
 
 [node name="GreenEnemy" parent="." instance=ExtResource("3_1o6ja")]
-position = Vector2(12, -24)
+position = Vector2(-4, 88)
 
 [node name="GreenEnemy2" parent="." instance=ExtResource("3_1o6ja")]
-position = Vector2(60, -16)
+position = Vector2(52, 96)
 
 [node name="GreenEnemy3" parent="." instance=ExtResource("3_1o6ja")]
-position = Vector2(-20, -24)
+position = Vector2(-28, 48)
