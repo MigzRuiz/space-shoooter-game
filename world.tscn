@@ -13,10 +13,10 @@ position = Vector2(19, 162)
 [node name="SpaceBackground" parent="." instance=ExtResource("2_jsonh")]
 
 [node name="GreenEnemy" parent="." instance=ExtResource("3_1o6ja")]
-position = Vector2(-4, 88)
+position = Vector2(20, -8)
 
 [node name="GreenEnemy2" parent="." instance=ExtResource("3_1o6ja")]
-position = Vector2(52, 96)
+position = Vector2(76, -8)
 
 [node name="GreenEnemy3" parent="." instance=ExtResource("3_1o6ja")]
-position = Vector2(-28, 48)
+position = Vector2(-28, -16)
