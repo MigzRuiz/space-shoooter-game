@@ -8,17 +8,16 @@ extends Node2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $Anchor/AnimatedSprite2D
 @onready var move_component: MoveComponent = $MoveComponent
 @onready var flame_animated_sprite = $Anchor/FlameAnimatedSprite
+@onready var hurtbox_component: HurtboxComponent = $HurtboxComponent
 
 
 func _ready():
 	fire_rate_timer.timeout.connect(fire_lasers)
 	
-	
 func fire_lasers():
 	scale_component.tween_scale()
 	spawner_component.spawn(left_muzzle.global_position)
 	spawner_component.spawn(right_muzzle.global_position)
-
 
 func _process(delta):
 	animate_the_ship()
