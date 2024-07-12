@@ -3,50 +3,50 @@
 [ext_resource type="Texture2D" uid="uid://d01xi7n6h0gsn" path="res://assets/explosion.png" id="1_6hjnk"]
 [ext_resource type="Script" path="res://components/onetime_animated_effect.gd" id="2_jdsxm"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fl5cf"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_q1krc"]
 atlas = ExtResource("1_6hjnk")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pjkvl"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_qd6hf"]
 atlas = ExtResource("1_6hjnk")
 region = Rect2(16, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nooli"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_gwbnl"]
 atlas = ExtResource("1_6hjnk")
 region = Rect2(32, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dj8gp"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_lkuaq"]
 atlas = ExtResource("1_6hjnk")
 region = Rect2(48, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1efpb"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ty7fb"]
 atlas = ExtResource("1_6hjnk")
 region = Rect2(64, 0, 16, 16)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_srooj"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_t28j2"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fl5cf")
+"texture": SubResource("AtlasTexture_q1krc")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_pjkvl")
+"texture": SubResource("AtlasTexture_qd6hf")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_nooli")
+"texture": SubResource("AtlasTexture_gwbnl")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dj8gp")
+"texture": SubResource("AtlasTexture_lkuaq")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1efpb")
+"texture": SubResource("AtlasTexture_ty7fb")
 }],
-"loop": false,
+"loop": true,
 "name": &"default",
 "speed": 10.0
 }]
 
 [node name="ExplosionEffect" type="AnimatedSprite2D"]
-sprite_frames = SubResource("SpriteFrames_srooj")
+sprite_frames = SubResource("SpriteFrames_t28j2")
 autoplay = "default"
 script = ExtResource("2_jdsxm")
