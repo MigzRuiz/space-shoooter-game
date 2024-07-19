@@ -9,8 +9,13 @@ extends Node2D
 @onready var hitbox_component : HitboxComponent = $HitboxComponent
 @onready var hurtbox_component : HurtboxComponent = $HurtboxComponent
 @onready var destroyed_component : DestroyedComponent = $DestroyedComponent
+@onready var score_component : ScoreComponent = $ScoreComponent
 
 func _ready():
+	stats_component.no_health.connect(func():
+		score_component.adjust_score()
+	)
+	
 	visible_on_screen_notifier_2d.screen_exited.connect(queue_free)
 	hurtbox_component.hurt.connect(func(hitbox : HitboxComponent):		
 		shake_component.tween_shake()
