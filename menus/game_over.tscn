@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dwy85urim6be3"]
+[gd_scene load_steps=6 format=3 uid="uid://dwy85urim6be3"]
 
 [ext_resource type="PackedScene" uid="uid://q5uu1ldqu5q1" path="res://effects/space_background.tscn" id="1_fjn73"]
 [ext_resource type="Script" path="res://menus/game_over.gd" id="1_molky"]
+[ext_resource type="Resource" uid="uid://cfpln8xwjdjne" path="res://game_stats.tres" id="2_4qra2"]
 [ext_resource type="LabelSettings" uid="uid://choniyuid74th" path="res://fonts/title_label_settings.tres" id="2_w8yhn"]
 [ext_resource type="LabelSettings" uid="uid://ct1tvh5ev74k7" path="res://fonts/default_label_settings.tres" id="3_o465p"]
 
@@ -13,6 +14,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_molky")
+game_stats = ExtResource("2_4qra2")
 
 [node name="SpaceBackground" parent="." instance=ExtResource("1_fjn73")]
 
@@ -32,6 +34,40 @@ layout_mode = 2
 text = "Game Over"
 label_settings = ExtResource("2_w8yhn")
 horizontal_alignment = 1
+
+[node name="ScoreHBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ScoreLabel" type="Label" parent="CenterContainer/VBoxContainer/ScoreHBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Score:"
+label_settings = ExtResource("3_o465p")
+
+[node name="ScoreValue" type="Label" parent="CenterContainer/VBoxContainer/ScoreHBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+label_settings = ExtResource("3_o465p")
+
+[node name="HighscoreHBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HighscoreLabel" type="Label" parent="CenterContainer/VBoxContainer/HighscoreHBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Highscore:"
+label_settings = ExtResource("3_o465p")
+
+[node name="HighscoreValue" type="Label" parent="CenterContainer/VBoxContainer/HighscoreHBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+label_settings = ExtResource("3_o465p")
+
+[node name="Control" type="Control" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 32)
+layout_mode = 2
 
 [node name="MenuLabel" type="Label" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
