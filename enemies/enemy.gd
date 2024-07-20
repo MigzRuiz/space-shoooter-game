@@ -1,3 +1,4 @@
+class_name Enemy
 extends Node2D
 
 @onready var visible_on_screen_notifier_2d : VisibleOnScreenNotifier2D = $VisibleOnScreenNotifier2D
