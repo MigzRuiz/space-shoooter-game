@@ -12,6 +12,7 @@ extends Node2D
 @onready var destroyed_component : DestroyedComponent = $DestroyedComponent
 @onready var score_component : ScoreComponent = $ScoreComponent
 
+
 func _ready():
 	stats_component.no_health.connect(func():
 		score_component.adjust_score()

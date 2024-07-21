@@ -17,7 +17,7 @@ func _ready() -> void:
 	# Add the timer as a child so we can use it
 	add_child(timer)
 	
-	# Connect to the timeout functino on the timer
+	# Connect to the timeout function on the timer
 	timer.timeout.connect(func():
 		# Emit finished because this state is finished
 		state_finished.emit()

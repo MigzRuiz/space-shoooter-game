@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c6ghkgr6thksf"]
+[gd_scene load_steps=8 format=3 uid="uid://c6ghkgr6thksf"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_6l6um"]
 [ext_resource type="PackedScene" uid="uid://yjjgk503uy5n" path="res://player_ship/ship.tscn" id="1_oh70a"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://q5uu1ldqu5q1" path="res://effects/space_background.tscn" id="2_jsonh"]
 [ext_resource type="PackedScene" uid="uid://sog0kmjvu4jl" path="res://enemies/enemy_generator.tscn" id="3_0g7na"]
 [ext_resource type="LabelSettings" uid="uid://ct1tvh5ev74k7" path="res://fonts/default_label_settings.tres" id="5_kqxtq"]
+[ext_resource type="PackedScene" uid="uid://b6o2bfkq2h3j4" path="res://enemies/pink_enemy.tscn" id="7_grn22"]
 
 [node name="World" type="Node2D"]
 position = Vector2(60, 40)
@@ -37,3 +38,6 @@ label_settings = ExtResource("5_kqxtq")
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="PinkEnemy" parent="." instance=ExtResource("7_grn22")]
+position = Vector2(28, 25)
