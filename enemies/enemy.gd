@@ -11,6 +11,7 @@ extends Node2D
 @onready var hurtbox_component : HurtboxComponent = $HurtboxComponent
 @onready var destroyed_component : DestroyedComponent = $DestroyedComponent
 @onready var score_component : ScoreComponent = $ScoreComponent
+@onready var variable_pitch_audio_stream_player = $VariablePitchAudioStreamPlayer
 
 
 func _ready():
@@ -23,6 +24,7 @@ func _ready():
 		shake_component.tween_shake()
 		scale_component.tween_scale()
 		flash_component.flash()
+		variable_pitch_audio_stream_player.play_with_variance()
 	)
 	
 	stats_component.no_health.connect(queue_free)
